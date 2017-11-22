@@ -6,10 +6,14 @@ package plate.plateandroid.Main
 interface MainContract {
     interface View {
         fun showToast(message: String)
+
+        fun showAlert()
+        fun setItemsList(promotions: MutableList<PromotionModel>)
     }
 
     interface Presenter{
         fun init(view : View)
-        fun showMessage()
+
+        fun initializePromotionList()
     }
 }
