@@ -1,4 +1,4 @@
-package plate.plateandroid.Main
+package plate.plateandroid.App.PromotionList
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
@@ -23,6 +23,6 @@ class PromotionModel: Serializable {
     }
 
     fun getTime(): String {
-        return "Start: " +  this.start_time + " End: " + this.end_time
+        return (this.start_time.substring(0, 10) + " from " + this.start_time.substring(11, 16) + " to " + this.end_time.substring(11, 16))
     }
 }

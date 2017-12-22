@@ -1,4 +1,4 @@
-package plate.plateandroid.Main
+package plate.plateandroid.App.Utils
 
 import android.support.v7.widget.RecyclerView
 import android.view.View

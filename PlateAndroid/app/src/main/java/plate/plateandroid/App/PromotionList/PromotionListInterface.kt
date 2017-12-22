@@ -1,0 +1,25 @@
+package plate.plateandroid.App.PromotionList
+
+/**
+ * Created by rennerll on 11/24/17.
+ */
+interface PromotionListInterface {
+    interface View {
+        fun showToast(message: String)
+        fun setItemsList(promotions: MutableMap<PromotionModel, Boolean>)
+        fun showNoFoodDialogFragmentFromController(promotionModel: PromotionModel)
+        fun dismissNoFoodDialogFragmentFromController()
+//        fun showAddPromotionDialogFragmentFromController(promotionModel: PromotionModel) - dialog started from float button click
+        fun dismissAddPromotionDialogFragmentFromController()
+        fun showLoading()
+        fun hideLoading()
+    }
+
+    interface Controller {
+        fun init(view : View, username: String)
+        fun initializePromotionList()
+        fun respondToClick(promotionModel: PromotionModel, firstClick: Boolean)
+        fun handleNoFoodDialog(confirm: Boolean, promotionModel: PromotionModel?)
+        fun handleAddPromotionDialog(confirm: Boolean, promotionModel: PromotionModel?)
+    }
+}
