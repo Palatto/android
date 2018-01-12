@@ -6,6 +6,8 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * Created by rennerll on 11/24/17.
@@ -43,7 +45,6 @@ class PromotionListController: PromotionListInterface.Controller {
                             val promotionsToGoMap = promotionsToGo.associateBy({it}, { true })
                             promotionListModel.promotions.putAll(promotionsToGoMap)
 
-                            // see this later
                             val observableWithResponseGoing = promotionAPI.readPromotionsGoing(username)
                             observableWithResponseGoing.subscribeOn(Schedulers.newThread())
                                     .observeOn(AndroidSchedulers.mainThread())
@@ -55,14 +56,14 @@ class PromotionListController: PromotionListInterface.Controller {
                                                 view.hideLoading()
                                             },
                                             { error ->
-                                                view.showToast("Something went wrong. Please, try again.")
+                                                view.showToast("Something went wrong. Please, check your internet connection and try again.")
                                                 error.printStackTrace()
                                                 view.hideLoading()
                                             }
                                     )
                         },
                         { error ->
-                            view.showToast("Something went wrong. Please, try again.")
+                            view.showToast("Something went wrong. Please, check your internet connection and try again.")
                             error.printStackTrace()
                             view.hideLoading()
                         }
@@ -78,14 +79,14 @@ class PromotionListController: PromotionListInterface.Controller {
                             { success ->
                                 if(success) {
                                     promotionListModel.changeButton(promotionModel)
-                                    view.showToast("Enjoy!")
-                                    view.setItemsList(promotionListModel.promotions) // TODO: better way to do it, reload data??
+                                    view.showToast("Enjoy!") // TODO: better way to do it, reload data??
+                                    view.setItemsList(promotionListModel.promotions)
                                 } else {
-                                    view.showToast("Sorry. This action in unavailable now.")
+                                    view.showToast("Sorry. This action in unavailable (event has no more food or is over).")
                                 }
                             },
                             { error ->
-                                view.showToast("Something went wrong. Please, try again.")
+                                view.showToast("Something went wrong. Please, check your internet connection and try again.")
                                 error.printStackTrace()
                             }
                     )
@@ -108,29 +109,39 @@ class PromotionListController: PromotionListInterface.Controller {
                                     view.showToast("Thanks for informing!") // TODO: better way to do it, reload data??
                                     view.setItemsList(promotionListModel.promotions)
                                 }else {
-                                    view.showToast("Sorry. This action in unavailable now.")
+                                    view.showToast("Sorry. This action in unavailable (event has no more food or is over).")
                                 }
                             },
                             { error ->
-                                view.showToast("Something went wrong. Please, try again.")
+                                view.showToast("Something went wrong. Please, check your internet connection and try again.")
                                 error.printStackTrace()
                             }
                     )
         }else {
             view.dismissNoFoodDialogFragmentFromController()
-            view.showToast("OK!")
         }
     }
 
     override fun handleAddPromotionDialog(confirm: Boolean, promotionModel: PromotionModel?) {
         if(confirm && promotionModel != null) {
+
+            // see if more validations are needed
+            val myFormat = "yyyy-MM-dd HH:mm:ss"
+            val sdf = SimpleDateFormat(myFormat)
+            val start_time_date = sdf.parse(promotionModel.start_time)
+            val end_time_date = sdf.parse(promotionModel.end_time)
+
+            if(end_time_date <= start_time_date) {
+                view.showToast("Your dates are not in sequence. Please, try again.")
+                return
+            }
+
             val observableWithResponseToGo = promotionAPI.createPromotion(promotionModel.title, promotionModel.start_time, promotionModel.end_time, promotionModel.location)
             observableWithResponseToGo.subscribeOn(Schedulers.newThread())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
                             { promotionId ->
                                 view.dismissAddPromotionDialogFragmentFromController()
-//                                val promotionId = response.body()
 
                                 if(promotionId != "") {
                                     promotionModel.promotion_id = promotionId as String
@@ -138,17 +149,16 @@ class PromotionListController: PromotionListInterface.Controller {
                                     view.showToast("Thanks for adding!")
                                     view.setItemsList(promotionListModel.promotions) // TODO: better way to do it, reload data??
                                 }else {
-                                    view.showToast("Sorry. This action in unavailable now.") // see this
+                                    view.showToast("Something went wrong. Please, check your internet connection, inputs and try again.")
                                 }
                             },
                             { error ->
-                                view.showToast("Something went wrong. Please, try again.")
+                                view.showToast("Something went wrong. Please, check your internet connection and try again.")
                                 error.printStackTrace()
                             }
                     )
         }else {
             view.dismissAddPromotionDialogFragmentFromController()
-            view.showToast("OK!")
         }
     }
 

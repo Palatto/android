@@ -17,7 +17,7 @@ import plate.plateandroid.R.layout.promotion_card
  */
 class PromotionAdapter constructor(var promotions: MutableMap<PromotionModel, Boolean>, var context: Context, var onClickListener: OnItemClickListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() { // solve context as soon as possible
     var promotionsArray =  promotions.keys.toMutableList().sortedWith( compareBy<PromotionModel>({ it.start_time }) )
-    var contextParameter = context // solve context as soon as possible
+    var contextParameter = context
 
     override fun getItemCount(): Int {
         return promotions.size
@@ -39,8 +39,7 @@ class PromotionAdapter constructor(var promotions: MutableMap<PromotionModel, Bo
             button.setOnClickListener {
                 onClickListener.OnItemClick(promotionModel, false)
             }
-//            button.setBackgroundColor(ContextCompat.getColor(contextParameter, android.R.color.darker_gray))
-            button.setText("CLICK IF FOOD IS OVER")
+            button.setText("IS THE FOOD OVER?")
             button.setTextColor(ContextCompat.getColor(contextParameter, android.R.color.darker_gray))
         } else {
             button.setOnClickListener {

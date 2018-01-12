@@ -14,15 +14,18 @@
         android:theme="@style/SplashTheme"
         android:debuggable="true"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".App.LoginPage.Complements.SplashActivity">
+        <activity android:name=".App.LoginPage.Complements.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginPageActivity"/>
+        <activity android:name=".LoginPageActivity"
+            android:screenOrientation="portrait"/>
         <!--<activity android:name=".App.LoginPage.LoginPageActivity"> why not?? -->
-        <activity android:name=".App.PromotionList.PromotionListActivity"/>
+        <activity android:name=".App.PromotionList.PromotionListActivity"
+            android:screenOrientation="portrait"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

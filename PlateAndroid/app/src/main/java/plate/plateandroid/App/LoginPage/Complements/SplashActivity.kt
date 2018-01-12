@@ -19,7 +19,7 @@ public class SplashActivity: AppCompatActivity() {
         val LOGIN_PREFERENCE = "loginPreference"
     }
 
-    val SPLASH_DISPLAY_LENGTH = 1000
+    val SPLASH_DISPLAY_LENGTH = 730
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

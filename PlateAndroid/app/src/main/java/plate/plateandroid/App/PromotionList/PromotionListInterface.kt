@@ -9,7 +9,6 @@ interface PromotionListInterface {
         fun setItemsList(promotions: MutableMap<PromotionModel, Boolean>)
         fun showNoFoodDialogFragmentFromController(promotionModel: PromotionModel)
         fun dismissNoFoodDialogFragmentFromController()
-//        fun showAddPromotionDialogFragmentFromController(promotionModel: PromotionModel) - dialog started from float button click
         fun dismissAddPromotionDialogFragmentFromController()
         fun showLoading()
         fun hideLoading()

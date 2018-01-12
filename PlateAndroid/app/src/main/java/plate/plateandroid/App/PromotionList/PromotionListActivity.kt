@@ -5,7 +5,6 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import android.view.WindowManager
 import android.widget.Toast
 import kotlinx.android.synthetic.main.promotion_list.*
 import plate.plateandroid.App.PromotionList.Complements.*
@@ -28,8 +27,8 @@ class PromotionListActivity : AppCompatActivity(), PromotionListInterface.View, 
         setContentView(R.layout.promotion_list)
         promotionListToolbar.title = "Free Food"
 
-        loading_icon.setIndeterminate(true);
-        loading_icon.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(this, R.color.mainRed), android.graphics.PorterDuff.Mode.MULTIPLY);
+        loading_icon.isIndeterminate = true
+        loading_icon.indeterminateDrawable.setColorFilter(ContextCompat.getColor(this, R.color.mainRed), android.graphics.PorterDuff.Mode.MULTIPLY)
 
         val b: Bundle = intent.extras
         val username = b.getString(USER_NAME)
@@ -48,7 +47,7 @@ class PromotionListActivity : AppCompatActivity(), PromotionListInterface.View, 
 
     override fun setItemsList(promotions: MutableMap<PromotionModel, Boolean>) {
         with(promotionListItems) {
-            addItemDecoration(PromotionListDivider(getApplicationContext()))
+            addItemDecoration(PromotionListDivider(applicationContext))
             setHasFixedSize(false)
             layoutManager = LinearLayoutManager(context)
             adapter = PromotionAdapter(promotions, this@PromotionListActivity, this@PromotionListActivity)
@@ -73,12 +72,6 @@ class PromotionListActivity : AppCompatActivity(), PromotionListInterface.View, 
             this@PromotionListActivity.supportFragmentManager.beginTransaction().remove(this)
         }
     }
-
-    // Not necessary, since the dialog can be started from the float button click directly
-
-    //    override fun showAddPromotionDialogFragmentFromController(promotionModel: PromotionModel) {
-//        showAddPromotionDialogFragment()
-//    }
 
     override fun dismissAddPromotionDialogFragmentFromController() {
         this.supportFragmentManager.findFragmentByTag(ADD_PROMOTION_DIALOG_TAG)?.apply {
@@ -112,7 +105,6 @@ class PromotionListActivity : AppCompatActivity(), PromotionListInterface.View, 
     /**LOADING METHODS*/
 
     override fun hideLoading() {
-//        window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
         loading_layer.visibility = View.GONE
     }
 

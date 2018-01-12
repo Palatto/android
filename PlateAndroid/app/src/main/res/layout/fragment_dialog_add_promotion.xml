@@ -13,10 +13,6 @@
         android:layout_alignParentTop="true"
         android:background="@color/mainRed">
 
-        <!--<RelativeLayout-->
-        <!--android:id="@+id/bob"-->
-        <!--android:layout_width="match_parent">-->
-
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/titleText"
             android:layout_width="wrap_content"
@@ -28,16 +24,6 @@
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
-
-        <!--android:layout_centerHorizontal="true"-->
-
-        <!--<View-->
-        <!--android:id="@+id/topInfoBoxBottomDivider"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:layout_below="@id/topInfoBox"-->
-        <!--android:layout_marginTop="16dp"-->
-        <!--android:background="@android:color/darker_gray" />-->
     </RelativeLayout>
 
     <LinearLayout
@@ -58,6 +44,7 @@
             android:layout_marginBottom="4dp"
             android:layout_marginTop="4dp"
             android:hint="Title"
+            android:maxLength="25"
             android:backgroundTint="@android:color/white"
             android:textColor="@color/mainGray"
             android:inputType="text"
@@ -98,6 +85,7 @@
             android:layout_marginBottom="4dp"
             android:layout_marginTop="4dp"
             android:hint="Location"
+            android:maxLength="25"
             android:backgroundTint="@android:color/white"
             android:textColor="@color/mainGray"
             android:inputType="text"
@@ -124,13 +112,13 @@
 
         <Button
             android:id="@+id/cancelItemQuantityButton"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:text="False"
+            android:text="Cancel"
             android:textAllCaps="false"
             android:textColor="@android:color/darker_gray"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:textSize="16sp" />
 
         <!--android:layout_weight="1"-->
 
@@ -142,12 +130,12 @@
 
         <Button
             android:id="@+id/concludeItemQuantityButton"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:text="True"
+            android:text="Add"
             android:textAllCaps="false"
-            android:textColor="@color/buttonGreen"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:textColor="@color/mainGreen"
+            android:textSize="16sp" />
     </LinearLayout>
 </RelativeLayout>

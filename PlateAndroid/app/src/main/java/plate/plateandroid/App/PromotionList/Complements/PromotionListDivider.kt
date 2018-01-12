@@ -13,11 +13,7 @@ import plate.plateandroid.R
  */
 
 class PromotionListDivider(context: Context) : RecyclerView.ItemDecoration() {
-    private val mDivider: Drawable
-
-    init {
-        mDivider = ContextCompat.getDrawable(context, R.drawable.promotion_list_divider)!!
-    }
+    private val mDivider: Drawable = ContextCompat.getDrawable(context, R.drawable.promotion_list_divider)!!
 
     override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         super.onDrawOver(c, parent, state)

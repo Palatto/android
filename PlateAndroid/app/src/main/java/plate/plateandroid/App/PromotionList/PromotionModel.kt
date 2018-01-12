@@ -13,7 +13,6 @@ class PromotionModel: Serializable {
     @SerializedName("end_time") var end_time: String = ""
     @SerializedName("location") var location: String = ""
 
-    // See if this constructor is necessary
     constructor(promotion_id: String, title: String, start_time: String, end_time: String, location: String) {
         this.promotion_id = promotion_id
         this.title = title
