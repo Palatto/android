@@ -77,8 +77,6 @@ class NoFoodDialogFragment: DialogFragment() {
 
         resultString.append(regularSpannable("You are about to inform that "))
         resultString.append(greenBoldSpannable(promotionModel.title))
-        resultString.append(regularSpannable(" at "))
-        resultString.append(greenBoldSpannable(promotionModel.location))
         resultString.append(regularSpannable(" does not have any food left."))
         resultString.append(regularSpannable(" Is that accurate?"))
 
