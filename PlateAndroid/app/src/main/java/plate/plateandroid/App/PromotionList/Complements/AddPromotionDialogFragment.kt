@@ -159,9 +159,11 @@ class AddPromotionDialogFragment: DialogFragment() {
 
         concludeButton = view?.findViewById<Button>(R.id.concludeItemQuantityButton)
         concludeButton?.setOnClickListener {
-            if(promotionTitle?.text != null && promotionLocation?.text != null && promotionStartTime?.text != null && promotionStartTime?.text != null) {
+            if(!promotionTitle?.text.isNullOrEmpty() && !promotionLocation?.text.isNullOrEmpty() && !promotionStartTime?.text.isNullOrEmpty() && !promotionStartTime?.text.isNullOrEmpty()) {
                 val promotionModel = PromotionModel("", promotionTitle!!.text.toString(), promotionStartTime!!.text.toString(), promotionEndTime!!.text.toString(), promotionLocation!!.text.toString())
                 promotionListDialogInterface?.dismissAddPromotionDialogFragment(true, promotionModel)
+            }else {
+                promotionListDialogInterface?.dismissAddPromotionDialogFragment(true, null)
             }
         }
     }

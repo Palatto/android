@@ -158,6 +158,7 @@ class PromotionListController: PromotionListInterface.Controller {
                             }
                     )
         }else {
+            if(confirm) view.showToast("Something went wrong. Please, check your inputs and try again.")
             view.dismissAddPromotionDialogFragmentFromController()
         }
     }
