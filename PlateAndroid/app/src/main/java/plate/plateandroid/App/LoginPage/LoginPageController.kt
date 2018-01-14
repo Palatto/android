@@ -26,8 +26,9 @@ class LoginPageController : LoginPageInterface.Controller {
                 .create(LoginAPI::class.java)
     }
 
+
     override fun tryToSignup(username: String) {
-        val pattern = Pattern.compile("^[-_+.a-zA-Z0-9!@#\$%^*()]{1,20}\$")
+        val pattern = Pattern.compile("^[-_+.a-zA-Z0-9!@#\$%^*()]{1,18}\$")
         val matcher = pattern.matcher(username)
 
         if(!matcher.matches()) {
@@ -56,7 +57,7 @@ class LoginPageController : LoginPageInterface.Controller {
     }
 
     override fun tryToLogin(username: String) {
-        val pattern = Pattern.compile("^[-_+.a-zA-Z0-9!@#\$%^*()]{1,20}\$")
+        val pattern = Pattern.compile("^[-_+.a-zA-Z0-9!@#\$%^*()]{1,18}\$")
         val matcher = pattern.matcher(username)
 
         if(!matcher.matches()) {
