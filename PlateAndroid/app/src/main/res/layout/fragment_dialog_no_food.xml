@@ -41,7 +41,7 @@
             android:text=""
             android:textColor="@color/mainGray"
             android:textSize="20sp"
-            android:fontFamily="@font/lobster_two"/>
+            android:fontFamily="@font/open_sans"/>
 
     </LinearLayout>
 
