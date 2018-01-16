@@ -5,11 +5,11 @@
     <color name="colorAccent">#C43235</color>
     <color name="transparentGray">#73ffffff</color>
     <color name="mainRed">#C43235</color>
-    <color name="mainGray">#404040</color>
+    <color name="mainGray">#AAAAAA</color>
     <color name="mainBlue">#117ED3</color>
     <color name="lighterBlue">#7F117ED3</color>
     <color name="whiteColor">#E8EDF3</color>
     <color name="blackColor">#06000a</color>
-    <color name="blackColor1">#06000a</color>
-    <color name="blackColor2">#06000a</color>
+    <color name="blackColor1">#BF06000a</color>
+    <color name="blackColor2">#9f06000a</color>
 </resources>

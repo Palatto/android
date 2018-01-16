@@ -73,10 +73,8 @@ class NoFoodDialogFragment: DialogFragment() {
     fun loadValues() {
         val resultString = SpannableStringBuilder()
 
-        resultString.append(regularSpannable("You are about to inform that "))
         resultString.append(boldSpannable(promotionModel.title))
-        resultString.append(regularSpannable(" does not have any food left."))
-        resultString.append(regularSpannable(" Is that accurate?"))
+        resultString.append(regularSpannable(" does not have any food left. Is that accurate?"))
 
         confirmTextAll?.text = resultString
     }

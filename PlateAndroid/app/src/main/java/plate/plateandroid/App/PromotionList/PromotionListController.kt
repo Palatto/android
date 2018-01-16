@@ -112,7 +112,7 @@ class PromotionListController: PromotionListInterface.Controller {
 
                                 if(success) {
                                     promotionListModel.removeCell(promotionModel)
-                                    view.showToast("Thanks for informing!") // TODO: better way to do it, reload data??
+                                    view.showToast("Thanks for letting us know!") // TODO: better way to do it, reload data??
                                     view.setItemsList(promotionListModel.promotions)
                                 }else {
                                     view.showToast("Sorry. This action in unavailable (event has no more food or is over).")
@@ -152,7 +152,7 @@ class PromotionListController: PromotionListInterface.Controller {
                                 if(promotionId != "") {
                                     promotionModel.promotion_id = promotionId as String
                                     promotionListModel.promotions.put(promotionModel, true)
-                                    view.showToast("Thanks for adding!")
+                                    view.showToast("Thanks for adding an event!")
                                     view.setItemsList(promotionListModel.promotions) // TODO: better way to do it, reload data??
                                 }else {
                                     view.showToast("Something went wrong. Please, check your internet connection, inputs and try again.")

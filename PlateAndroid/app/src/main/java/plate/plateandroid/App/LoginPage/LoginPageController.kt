@@ -43,7 +43,6 @@ class LoginPageController : LoginPageInterface.Controller {
                 .subscribe(
                         { successfullyRegistered ->
                             if(successfullyRegistered) {
-                                view.showToast("Signed up with success.")
                                 view.goToPromotions(username)
                             } else {
                                 view.showToast("This username is already taken.")
@@ -71,7 +70,6 @@ class LoginPageController : LoginPageInterface.Controller {
                 .subscribe(
                         { successfullyChecked ->
                             if(successfullyChecked) {
-                                view.showToast("Logged in with success.")
                                 view.goToPromotions(username)
                             } else {
                                 view.showToast("This username is not in our database.")
