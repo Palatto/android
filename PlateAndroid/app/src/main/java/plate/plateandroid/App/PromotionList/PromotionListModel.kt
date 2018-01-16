@@ -4,7 +4,7 @@ package plate.plateandroid.App.PromotionList
  * Created by rennerll on 11/20/17.
  */
 class PromotionListModel: Comparator<PromotionModel> {
-    val promotions = mutableMapOf<PromotionModel, Boolean>()
+    var promotions = mutableMapOf<PromotionModel, Boolean>()
 
     fun changeButton(promotionModel: PromotionModel) {
         promotions[promotionModel] = false

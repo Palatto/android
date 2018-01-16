@@ -43,7 +43,6 @@ class PromotionListController: PromotionListInterface.Controller {
                 .subscribe(
                         { promotionsToGo ->
                             val promotionsToGoMap = promotionsToGo.associateBy({it}, { true })
-                            promotionListModel.promotions.clear()
                             promotionListModel.promotions.putAll(promotionsToGoMap)
 
                             val observableWithResponseGoing = promotionAPI.readPromotionsGoing(username)
@@ -72,6 +71,7 @@ class PromotionListController: PromotionListInterface.Controller {
     }
 
     override fun refreshPromotionList() {
+        promotionListModel.promotions = mutableMapOf<PromotionModel, Boolean>()
         initializePromotionList()
         view.stopRefreshing()
     }

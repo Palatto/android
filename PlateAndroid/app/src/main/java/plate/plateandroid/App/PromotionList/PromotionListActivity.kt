@@ -38,6 +38,8 @@ class PromotionListActivity : AppCompatActivity(), PromotionListInterface.View, 
         controller.init(this, username)
         controller.initializePromotionList()
 
+        promotionRefresh.setColorSchemeResources(R.color.mainRed, R.color.mainRed, R.color.mainRed)
+
         promotionRefresh.setOnRefreshListener({
             controller.refreshPromotionList()
         })
