@@ -43,7 +43,7 @@ class AddPromotionDialogFragment: DialogFragment() {
         val startTimeTimePicker = TimePickerDialog.newInstance(startTimeTimePickerInterface, 0, 0, true)
         startTimeTimePicker.setAccentColor(ContextCompat.getColor(context!!, R.color.mainRed))
         startTimeTimePicker.setCancelColor(ContextCompat.getColor(context!!, android.R.color.darker_gray))
-        startTimeTimePicker.setOkColor(ContextCompat.getColor(context!!, R.color.mainGreen))
+        startTimeTimePicker.setOkColor(ContextCompat.getColor(context!!, R.color.mainBlue))
         startTimeTimePicker.show(this@AddPromotionDialogFragment.activity?.fragmentManager, START_TIME_PICKER)
     }
     var startTimeTimePickerInterface = TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute, second ->
@@ -71,7 +71,7 @@ class AddPromotionDialogFragment: DialogFragment() {
         val endTimeTimePicker = TimePickerDialog.newInstance(endTimeTimePickerInterface, 0, 0, true)
         endTimeTimePicker.setAccentColor(ContextCompat.getColor(context!!, R.color.mainRed))
         endTimeTimePicker.setCancelColor(ContextCompat.getColor(context!!, android.R.color.darker_gray))
-        endTimeTimePicker.setOkColor(ContextCompat.getColor(context!!, R.color.mainGreen))
+        endTimeTimePicker.setOkColor(ContextCompat.getColor(context!!, R.color.mainBlue))
         endTimeTimePicker.show(this@AddPromotionDialogFragment.activity?.fragmentManager, END_TIME_PICKER)
 }
     var endTimeTimePickerInterface = TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute, second ->
@@ -125,7 +125,7 @@ class AddPromotionDialogFragment: DialogFragment() {
             val startTimeDatePicker = DatePickerDialog.newInstance(startTimeDatePickerInterface, calendarStartTime.get(Calendar.YEAR), calendarStartTime.get(Calendar.MONTH), calendarStartTime.get(Calendar.DAY_OF_MONTH))
             startTimeDatePicker.setAccentColor(ContextCompat.getColor(context!!, R.color.mainRed))
             startTimeDatePicker.setCancelColor(ContextCompat.getColor(context!!, android.R.color.darker_gray))
-            startTimeDatePicker.setOkColor(ContextCompat.getColor(context!!, R.color.mainGreen))
+            startTimeDatePicker.setOkColor(ContextCompat.getColor(context!!, R.color.mainBlue))
             startTimeDatePicker.minDate = calendarMin
             startTimeDatePicker.maxDate = calendarMax
             startTimeDatePicker.show(this@AddPromotionDialogFragment.activity?.fragmentManager, START_DATE_PICKER)
@@ -144,7 +144,7 @@ class AddPromotionDialogFragment: DialogFragment() {
             val endTimeDatePicker = DatePickerDialog.newInstance(endTimeDatePickerInterface, calendarEndTime.get(Calendar.YEAR), calendarEndTime.get(Calendar.MONTH), calendarEndTime.get(Calendar.DAY_OF_MONTH))
             endTimeDatePicker.setAccentColor(ContextCompat.getColor(context!!, R.color.mainRed))
             endTimeDatePicker.setCancelColor(ContextCompat.getColor(context!!, android.R.color.darker_gray))
-            endTimeDatePicker.setOkColor(ContextCompat.getColor(context!!, R.color.mainGreen))
+            endTimeDatePicker.setOkColor(ContextCompat.getColor(context!!, R.color.mainBlue))
             endTimeDatePicker.minDate = calendarMin
             endTimeDatePicker.maxDate = calendarMax
             endTimeDatePicker.show(this@AddPromotionDialogFragment.activity?.fragmentManager, END_DATE_PICKER)

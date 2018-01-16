@@ -21,9 +21,10 @@
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
             android:text="Add an event"
-            android:textColor="@android:color/white"
+            android:textColor="@color/whiteColor"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:fontFamily="@font/open_sans" />
     </RelativeLayout>
 
     <LinearLayout
@@ -42,12 +43,13 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
             android:layout_marginTop="3dp"
-            android:hint="Title"
-            android:maxLength="18"
+            android:layout_weight="1"
             android:backgroundTint="@android:color/white"
-            android:textColor="@color/mainGray"
+            android:fontFamily="@font/open_sans"
+            android:hint="Title"
             android:inputType="text"
-            android:layout_weight="1"/>
+            android:maxLength="18"
+            android:textColor="@color/mainGray" />
 
         <EditText
             android:id="@+id/promotionStartTime"
@@ -55,13 +57,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
             android:layout_marginTop="3dp"
-            android:hint="Start Time"
+            android:layout_weight="1"
             android:backgroundTint="@android:color/white"
-            android:textColor="@color/mainGray"
-            android:inputType="none"
-            android:focusable="false"
             android:clickable="true"
-            android:layout_weight="1"/>
+            android:focusable="false"
+            android:fontFamily="@font/open_sans"
+            android:hint="Start Time"
+            android:inputType="none"
+            android:textColor="@color/mainGray" />
 
         <EditText
             android:id="@+id/promotionEndTime"
@@ -69,13 +72,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
             android:layout_marginTop="3dp"
-            android:hint="End Time"
+            android:layout_weight="1"
             android:backgroundTint="@android:color/white"
-            android:textColor="@color/mainGray"
-            android:inputType="none"
-            android:focusable="false"
             android:clickable="true"
-            android:layout_weight="1"/>
+            android:focusable="false"
+            android:fontFamily="@font/open_sans"
+            android:hint="End Time"
+            android:inputType="none"
+            android:textColor="@color/mainGray" />
 
         <EditText
             android:id="@+id/promotionLocation"
@@ -83,12 +87,13 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
             android:layout_marginTop="3dp"
-            android:hint="Location"
-            android:maxLength="18"
+            android:layout_weight="1"
             android:backgroundTint="@android:color/white"
-            android:textColor="@color/mainGray"
+            android:fontFamily="@font/open_sans"
+            android:hint="Location"
             android:inputType="text"
-            android:layout_weight="1"/>
+            android:maxLength="18"
+            android:textColor="@color/mainGray" />
 
     </LinearLayout>
 
@@ -108,6 +113,7 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
             android:text="Cancel"
             android:textAllCaps="false"
             android:textColor="@android:color/darker_gray"
@@ -118,9 +124,10 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
             android:text="Add"
             android:textAllCaps="false"
-            android:textColor="@color/mainGreen"
+            android:textColor="@color/mainBlue"
             android:textSize="16sp" />
     </LinearLayout>
 </RelativeLayout>

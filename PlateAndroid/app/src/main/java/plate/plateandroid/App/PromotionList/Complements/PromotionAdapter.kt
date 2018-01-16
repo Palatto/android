@@ -39,8 +39,8 @@ class PromotionAdapter constructor(var promotions: MutableMap<PromotionModel, Bo
             button.setOnClickListener {
                 onClickListener.OnItemClick(promotionModel, false)
             }
-            button.setText("IS THE FOOD OVER?")
-            button.setTextColor(ContextCompat.getColor(contextParameter, android.R.color.darker_gray))
+            button.setText("NO FOOD LEFT?")
+            button.setTextColor(ContextCompat.getColor(contextParameter, R.color.lighterBlue))
         } else {
             button.setOnClickListener {
                 onClickListener.OnItemClick(promotionModel, true)

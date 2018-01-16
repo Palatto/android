@@ -71,12 +71,10 @@ class NoFoodDialogFragment: DialogFragment() {
     }
 
     fun loadValues() {
-        titleText?.text = "Are you sure?"
-
         val resultString = SpannableStringBuilder()
 
         resultString.append(regularSpannable("You are about to inform that "))
-        resultString.append(greenBoldSpannable(promotionModel.title))
+        resultString.append(boldSpannable(promotionModel.title))
         resultString.append(regularSpannable(" does not have any food left."))
         resultString.append(regularSpannable(" Is that accurate?"))
 
@@ -85,14 +83,17 @@ class NoFoodDialogFragment: DialogFragment() {
 
     private fun regularSpannable(text: String): SpannableString {
         var partOfResult = SpannableString(text)
+
+
         partOfResult.setSpan(AbsoluteSizeSpan(16, true), 0, partOfResult.length, 0)
         partOfResult.setSpan(ForegroundColorSpan(ContextCompat.getColor(context!!, R.color.mainGray)), 0, partOfResult.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
 
         return partOfResult
     }
 
-    private fun greenBoldSpannable(text: String): SpannableString {
+    private fun boldSpannable(text: String): SpannableString {
         var partOfResult = SpannableString(text)
+
 
         partOfResult.setSpan(AbsoluteSizeSpan(16, true), 0, partOfResult.length, 0)
         partOfResult.setSpan(StyleSpan(STYLE_NORMAL), 0, partOfResult.length, 0)

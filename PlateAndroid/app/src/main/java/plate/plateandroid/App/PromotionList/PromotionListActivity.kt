@@ -9,6 +9,9 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.promotion_list.*
 import plate.plateandroid.App.PromotionList.Complements.*
 import plate.plateandroid.R
+import android.support.v4.widget.SwipeRefreshLayout
+
+
 
 /**
  * Created by rennerll on 11/24/17.
@@ -25,7 +28,6 @@ class PromotionListActivity : AppCompatActivity(), PromotionListInterface.View, 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.promotion_list)
-        promotionListToolbar.title = "Free Food"
 
         loading_icon.isIndeterminate = true
         loading_icon.indeterminateDrawable.setColorFilter(ContextCompat.getColor(this, R.color.mainRed), android.graphics.PorterDuff.Mode.MULTIPLY)
@@ -35,6 +37,10 @@ class PromotionListActivity : AppCompatActivity(), PromotionListInterface.View, 
 
         controller.init(this, username)
         controller.initializePromotionList()
+
+        promotionRefresh.setOnRefreshListener({
+            controller.refreshPromotionList()
+        })
 
         addButtonPromotion.setOnClickListener {
             showAddPromotionDialogFragment()
@@ -110,6 +116,12 @@ class PromotionListActivity : AppCompatActivity(), PromotionListInterface.View, 
 
     override fun showLoading() {
         loading_layer.visibility = View.VISIBLE
+    }
+
+    /**REFRESHING METHODS*/
+
+    override fun stopRefreshing() {
+        promotionRefresh.isRefreshing = false
     }
 
 }

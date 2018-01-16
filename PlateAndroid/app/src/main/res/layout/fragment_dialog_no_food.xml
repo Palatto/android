@@ -17,10 +17,11 @@
             android:layout_marginLeft="18dp"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:text=""
+            android:text="Are you sure?"
             android:textColor="@android:color/white"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:fontFamily="@font/open_sans" />
     </RelativeLayout>
 
     <LinearLayout
@@ -39,7 +40,8 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="@color/mainGray"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:fontFamily="@font/lobster_two"/>
 
     </LinearLayout>
 
@@ -60,6 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/open_sans"
             android:text="No"
             android:textAllCaps="false"
             android:textColor="@android:color/darker_gray"
@@ -71,9 +74,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/open_sans"
             android:text="Yes"
             android:textAllCaps="false"
-            android:textColor="@color/mainGreen"
+            android:textColor="@color/mainBlue"
             android:textSize="16sp" />
 
     </LinearLayout>

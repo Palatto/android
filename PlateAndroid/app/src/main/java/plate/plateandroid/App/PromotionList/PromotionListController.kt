@@ -43,6 +43,7 @@ class PromotionListController: PromotionListInterface.Controller {
                 .subscribe(
                         { promotionsToGo ->
                             val promotionsToGoMap = promotionsToGo.associateBy({it}, { true })
+                            promotionListModel.promotions.clear()
                             promotionListModel.promotions.putAll(promotionsToGoMap)
 
                             val observableWithResponseGoing = promotionAPI.readPromotionsGoing(username)
@@ -68,6 +69,11 @@ class PromotionListController: PromotionListInterface.Controller {
                             view.hideLoading()
                         }
                 )
+    }
+
+    override fun refreshPromotionList() {
+        initializePromotionList()
+        view.stopRefreshing()
     }
 
     override fun respondToClick(promotionModel: PromotionModel, firstClick: Boolean) {

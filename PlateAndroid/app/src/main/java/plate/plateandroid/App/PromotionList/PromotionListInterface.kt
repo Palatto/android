@@ -12,11 +12,13 @@ interface PromotionListInterface {
         fun dismissAddPromotionDialogFragmentFromController()
         fun showLoading()
         fun hideLoading()
+        fun stopRefreshing()
     }
 
     interface Controller {
         fun init(view : View, username: String)
         fun initializePromotionList()
+        fun refreshPromotionList()
         fun respondToClick(promotionModel: PromotionModel, firstClick: Boolean)
         fun handleNoFoodDialog(confirm: Boolean, promotionModel: PromotionModel?)
         fun handleAddPromotionDialog(confirm: Boolean, promotionModel: PromotionModel?)
