@@ -30,7 +30,7 @@
                 android:layout_gravity="left"
                 android:layout_marginLeft="18dp"
                 android:fontFamily="@font/lobster_two"
-                android:text="Plate"
+                android:text="Palatto"
                 android:textColor="@color/whiteColor"
                 android:textSize="32sp" />
 

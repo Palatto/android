@@ -84,7 +84,7 @@ class NoFoodDialogFragment: DialogFragment() {
 
 
         partOfResult.setSpan(AbsoluteSizeSpan(16, true), 0, partOfResult.length, 0)
-        partOfResult.setSpan(ForegroundColorSpan(ContextCompat.getColor(context!!, R.color.mainGray)), 0, partOfResult.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        partOfResult.setSpan(ForegroundColorSpan(ContextCompat.getColor(context!!, R.color.blackColor)), 0, partOfResult.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
 
         return partOfResult
     }

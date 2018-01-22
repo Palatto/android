@@ -30,24 +30,24 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:src="@drawable/ic_logo"
-            app:layout_constraintBottom_toTopOf="@+id/plate"
+            app:layout_constraintBottom_toTopOf="@+id/palatto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/plate"
-            android:layout_width="100dp"
+            android:id="@+id/palatto"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/logo"
             android:layout_marginBottom="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
             android:fontFamily="@font/lobster_two"
             android:gravity="center"
-            android:text="Plate"
+            android:text="Palatto"
             android:textAlignment="center"
             android:textColor="@color/whiteColor"
             android:textSize="40sp"
@@ -76,7 +76,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plate" />
+            app:layout_constraintTop_toBottomOf="@+id/palatto" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/signup_button"

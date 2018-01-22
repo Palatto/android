@@ -1,7 +1,6 @@
 package plate.plateandroid.App.PromotionList.Complements
 
 import plate.plateandroid.App.PromotionList.PromotionModel
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path

@@ -7,7 +7,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 import java.text.SimpleDateFormat
-import java.util.*
 
 /**
  * Created by rennerll on 11/24/17.

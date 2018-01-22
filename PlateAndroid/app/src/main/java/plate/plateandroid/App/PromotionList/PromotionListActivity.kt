@@ -9,8 +9,6 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.promotion_list.*
 import plate.plateandroid.App.PromotionList.Complements.*
 import plate.plateandroid.R
-import android.support.v4.widget.SwipeRefreshLayout
-
 
 
 /**
